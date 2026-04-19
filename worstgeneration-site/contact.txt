@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | WorstGeneration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Orbitron',sans-serif;
+  background:#050505;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  opacity:0.08;
+  font-size:5rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:red;
+  letter-spacing:10px;
+  animation:spin 15s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes spin{
+  0%{transform:rotateY(0deg);}
+  100%{transform:rotateY(360deg);}
+}
+
+/* PAGE */
+.container{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  margin:auto;
+  padding:80px 20px;
+  text-align:center;
+}
+
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:4rem;
+  margin-bottom:10px;
+}
+
+p{
+  opacity:0.7;
+}
+
+/* BOX */
+.box{
+  margin-top:40px;
+  background:#0f0f0f;
+  padding:25px;
+  border:1px solid rgba(255,0,0,0.3);
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(255,0,0,0.15);
+}
+
+/* INPUTS */
+input, textarea{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  background:black;
+  border:1px solid red;
+  color:white;
+  outline:none;
+  font-family:'Orbitron',sans-serif;
+}
+
+textarea{
+  height:120px;
+  resize:none;
+}
+
+button{
+  margin-top:15px;
+  padding:12px 20px;
+  background:none;
+  border:1px solid red;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:1rem;
+}
+
+button:hover{
+  background:red;
+  box-shadow:0 0 15px red;
+}
+
+/* BACK BUTTON FIXED */
+.back{
+  position:absolute;
+  top:20px;
+  left:20px;
+  color:white;
+  text-decoration:none;
+  opacity:0.7;
+  font-size:1.1rem;
+}
+
+.back:hover{
+  opacity:1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACK BUTTON (FIXED PATH) -->
+<a class="back" href="file:///C:/Users/wtfkaizee/Desktop/worstgeneration-site/indexx.html">← Back</a>
+
+<!-- BACKGROUND -->
+<div class="bg">WORSTGENERATION</div>
+
+<div class="container">
+
+  <h1>CONTACT / APPLY</h1>
+  <p>Send your application to join WorstGeneration or contact us for collabs.</p>
+
+  <div class="box">
+
+    <form action="mailto:foreignjunkie0@gmail.com" method="post" enctype="text/plain">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+
+      <input type="text" name="artistname" placeholder="Artist Name" required>
+
+      <input type="text" name="instagram" placeholder="Instagram / TikTok">
+
+      <textarea name="message" placeholder="Why you want to join WorstGeneration..." required></textarea>
+
+      <button type="submit">Send Application</button>
+
+    </form>
+
+  </div>
+
+  <p style="margin-top:30px;opacity:0.5;">
+    Or email us directly: <b>foreignjunkie0@gmail.com</b>
+  </p>
+
+</div>
+
+</body>
+</html>
