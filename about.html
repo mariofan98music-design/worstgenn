@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | WorstGeneration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Orbitron',sans-serif;
+  background:#050505;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND TEXT SCROLL */
+.bg-text{
+  position:fixed;
+  top:0;
+  left:0;
+  width:200%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:40px;
+  opacity:0.08;
+  z-index:0;
+}
+
+.bg-row{
+  font-size:6rem;
+  white-space:nowrap;
+  color:red;
+  animation:scroll 20s linear infinite;
+}
+
+.bg-row:nth-child(even){animation-direction:reverse;}
+
+@keyframes scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* CONTAINER */
+.container{
+  position:relative;
+  z-index:2;
+  max-width:1000px;
+  margin:auto;
+  padding:100px 20px;
+  text-align:center;
+}
+
+/* TITLE */
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:5rem;
+  letter-spacing:3px;
+  margin-bottom:10px;
+  text-shadow:0 0 25px rgba(255,0,0,0.4);
+}
+
+/* TEXT */
+p{
+  opacity:0.8;
+  line-height:1.7;
+  font-size:1.2rem;
+}
+
+/* BOX */
+.box{
+  margin-top:40px;
+  background:#0f0f0f;
+  padding:30px;
+  border:1px solid rgba(255,0,0,0.3);
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(255,0,0,0.2);
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:50px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  background:#0a0a0a;
+  padding:25px;
+  border:1px solid red;
+  width:200px;
+  transition:0.3s;
+}
+
+.stat:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px red;
+}
+
+.stat h2{
+  font-size:2.5rem;
+  margin:0;
+  color:red;
+}
+
+.stat p{
+  font-size:0.9rem;
+  opacity:0.6;
+}
+
+/* BACK BUTTON */
+.back{
+  position:absolute;
+  top:20px;
+  left:20px;
+  color:white;
+  text-decoration:none;
+  opacity:0.7;
+  cursor:pointer;
+}
+
+.back:hover{opacity:1;}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-text">
+  <div class="bg-row">WORSTGENERATION WORSTGENERATION WORSTGENERATION</div>
+  <div class="bg-row">WORSTGENERATION WORSTGENERATION WORSTGENERATION</div>
+  <div class="bg-row">WORSTGENERATION WORSTGENERATION WORSTGENERATION</div>
+</div>
+
+<!-- FIXED BACK BUTTON -->
+<a class="back" onclick="goBack()">← Back</a>
+
+<div class="container">
+
+  <h1>WHO WE ARE</h1>
+
+  <p>
+    WorstGeneration is an underground music collective built for the new era. 
+    We create, innovate, and push boundaries — not follow them.
+  </p>
+
+  <div class="box">
+
+    <p>
+      We bring together artists with unique sounds, visuals, and energy. 
+      Every member represents individuality while contributing to a bigger vision.
+    </p>
+
+    <p>
+      From music videos to full projects, everything we do is about creating impact 
+      and building a legacy beyond trends.
+    </p>
+
+    <p>
+      This isn’t just a group — it’s a movement shaping the future of underground music.
+    </p>
+
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h2>3+</h2>
+      <p>Artists</p>
+    </div>
+
+    <div class="stat">
+      <h2>∞</h2>
+      <p>Creative Vision</p>
+    </div>
+
+    <div class="stat">
+      <h2>2026</h2>
+      <p>Established</p>
+    </div>
+  </div>
+
+  <p style="margin-top:50px;opacity:0.5;">
+    WORSTGENERATION © New Era Sound
+  </p>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function goBack(){
+  window.location.href = "indexx.html";
+}
+</script>
+
+</body>
+</html>

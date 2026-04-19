@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LILMUMO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:'Bebas Neue',sans-serif;
+  overflow:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  perspective:800px;
+}
+
+.bg span{
+  position:absolute;
+  font-size:3rem;
+  opacity:0.06;
+  color:red;
+  animation:float 12s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translate3d(0,0,0) rotateX(0deg);}
+  50%{transform:translate3d(60px,-80px,200px) rotateX(180deg);}
+  100%{transform:translate3d(0,0,0) rotateX(360deg);}
+}
+
+/* PAGE */
+.page{
+  position:relative;
+  z-index:2;
+  display:flex;
+  height:100vh;
+  padding:40px;
+  gap:60px;
+}
+
+/* LEFT IMAGE */
+.left{
+  flex:0.8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.left img{
+  width:320px;
+  height:320px;
+  object-fit:cover;
+  border-radius:50%;
+  box-shadow:0 0 50px rgba(255,0,0,0.5);
+  transition:0.4s;
+}
+
+.left img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 80px rgba(255,0,0,0.7);
+}
+
+/* RIGHT */
+.right{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+h1{
+  font-size:5rem;
+  margin:0;
+  letter-spacing:3px;
+  text-shadow:0 0 25px rgba(255,0,0,0.4);
+}
+
+.bio{
+  opacity:0.85;
+  max-width:520px;
+  margin:15px 0 30px;
+  font-size:1.4rem;
+  line-height:1.6;
+}
+
+/* LINKS */
+.links a{
+  display:block;
+  width:260px;
+  margin:12px 0;
+  padding:14px;
+  font-size:1.2rem;
+  border:1px solid red;
+  text-decoration:none;
+  color:white;
+  transition:0.35s ease;
+  transform-style:preserve-3d;
+}
+
+.links a:hover{
+  background:red;
+  transform:perspective(800px) rotateX(12deg) rotateY(-12deg) translateZ(10px);
+  box-shadow:0 10px 25px rgba(255,0,0,0.3);
+}
+
+/* BACK BUTTON */
+.back{
+  position:fixed;
+  top:20px;
+  left:20px;
+  color:white;
+  text-decoration:none;
+  opacity:0.6;
+  z-index:9999;
+  cursor:pointer;
+}
+
+.back:hover{opacity:1;}
+
+/* SPIN TEXT */
+.spin{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1;
+  pointer-events:none;
+  font-size:6rem;
+  letter-spacing:10px;
+  color:red;
+  opacity:0.08;
+  transform-style:preserve-3d;
+  animation:spin 12s linear infinite;
+  text-shadow:0 0 20px red;
+}
+
+@keyframes spin{
+  0%{transform:rotateY(0deg) rotateX(10deg);}
+  100%{transform:rotateY(360deg) rotateX(10deg);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACK BUTTON -->
+<a class="back" onclick="goBack()">← Back</a>
+
+<!-- BACKGROUND -->
+<div class="bg" id="bg"></div>
+
+<!-- SPIN TEXT -->
+<div class="spin">LILMUMO • WORSTGENERATION</div>
+
+<div class="page">
+
+  <!-- IMAGE -->
+  <div class="left">
+    <img src="https://i.imgur.com/hfYxQI5.png">
+  </div>
+
+  <!-- CONTENT -->
+  <div class="right">
+    <h1>LILMUMO</h1>
+
+    <p class="bio">
+      Underground artist from WorstGeneration bringing energy, visuals, and a new wave sound to the scene.
+    </p>
+
+    <div class="links">
+      <a href="https://music.apple.com/us/artist/lil-mumo/1703392734" target="_blank">Apple Music</a>
+      <a href="https://open.spotify.com/artist/55i9F7JyQ5zjesGAcZozpQ?si=Ra9pjlbPTPCg0IxaFcyBNQ" target="_blank">Spotify</a>
+      <a href="https://youtube.com/@lil_mumo0?si=XLOLh58ngtIZ8MLk" target="_blank">YouTube</a>
+      <a href="https://www.tiktok.com/@lil_mumo3?_r=1&_t=ZT-95UGU4u52Zq" target="_blank">TikTok</a>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function goBack(){
+  window.location.href = "indexx.html";
+}
+
+// floating background
+const bg=document.getElementById('bg');
+for(let i=0;i<20;i++){
+  const s=document.createElement('span');
+  s.innerText="LILMUMO";
+  s.style.top=Math.random()*100+"%";
+  s.style.left=Math.random()*100+"%";
+  s.style.fontSize=(Math.random()*3+1)+"rem";
+  s.style.animationDuration=(Math.random()*10+8)+"s";
+  bg.appendChild(s);
+}
+</script>
+
+</body>
+</html>
